@@ -8,7 +8,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 //monggoseee
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/db_staycation', {
+mongoose.connect('mongodb://admin:852951Reza@ac-tlqep5r-shard-00-00.nrfeg6j.mongodb.net:27017,ac-tlqep5r-shard-00-01.nrfeg6j.mongodb.net:27017,ac-tlqep5r-shard-00-02.nrfeg6j.mongodb.net:27017/?ssl=true&replicaSet=atlas-vv24a1-shard-0&authSource=admin&retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
