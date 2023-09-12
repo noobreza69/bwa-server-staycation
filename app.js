@@ -7,9 +7,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
 const cors= require('cors');
-const corstOptions={
-  origin: 'http://localhost:3000',
-}
+
 //monggoseee
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://mongo:RnzL5xbyCzh6PpLlluJc@containers-us-west-170.railway.app:7398', {
