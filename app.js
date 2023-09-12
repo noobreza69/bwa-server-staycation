@@ -6,6 +6,10 @@ var logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
+const cors= require('cors');
+const corstOptions={
+  origin: 'http://localhost:3000',
+}
 //monggoseee
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://mongo:RnzL5xbyCzh6PpLlluJc@containers-us-west-170.railway.app:7398', {
@@ -22,6 +26,8 @@ const adminRouter = require('./routes/admin');
 const apiRouter = require('./routes/api');
 
 var app = express();
+
+//configure cors
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -51,6 +57,10 @@ app.use('/api/v1/member', apiRouter);
 app.use(function (req, res, next) {
   next(createError(404));
 });
+
+app.use(cors({
+  origin:'*'
+}))
 
 // error handler
 app.use(function (err, req, res, next) {
